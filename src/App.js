@@ -1,23 +1,48 @@
-import logo from './logo.svg';
-import './App.css';
-
+import React, { useState } from "react";
+import "./App.css";
+import LoginForm from "./components/LoginForm";
+import RegistrationForm from "./components/RegistrationForm";
+import Home from "./components/Home";
+import PrivateRoute from "./utils/PrivateRoute";
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import Footer from "./components/Footer";
+import Landing from "./components/Landing";
+import Header from "./components/Header";
+import AlertComponent from "./components/AlertComponent";
 function App() {
+  const [title, updateTitle] = useState(null);
+  const [errorMessage, updateErrorMessage] = useState(null);
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div >
+      <Header />
+      <div className="container">
+      <Router>
+        <Switch>
+          <Route path="/" exact={true}>
+            <Landing />
+          </Route>
+          <Route path="/register">
+            <RegistrationForm
+              showError={updateErrorMessage}
+              updateTitle={updateTitle}
+            />
+          </Route>
+          <Route path="/login">
+            <LoginForm
+              showError={updateErrorMessage}
+              updateTitle={updateTitle}
+            />
+          </Route>
+          <PrivateRoute path="/home">
+            <Home />
+          </PrivateRoute>
+          </Switch>
+         
+        <AlertComponent errorMessage={errorMessage} hideError={updateErrorMessage}/>
+       </Router>
+      </div>
+      
+      <Footer />
     </div>
   );
 }

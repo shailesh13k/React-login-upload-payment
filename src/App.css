@@ -1,5 +1,5 @@
 .App {
-  text-align: center;
+  align:left;
 }
 
 .App-logo {
@@ -35,4 +35,51 @@
   to {
     transform: rotate(360deg);
   }
+}
+
+.login-card {
+  min-height: 60vh;
+}
+
+.registerMessage {
+  margin-top: 10vh;
+}
+.loginText {
+  color: #007bff;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.successMessage {
+  color: green;
+  font-weight: bold;
+}
+
+.form-registration{
+  width:100%;
+  max-width:400px;
+  padding:15px;
+  margin:auto;
+
+}
+
+.form-login{
+  width:100%;
+  max-width:400px;
+  padding:15px;
+  margin:auto;
+
+}
+
+.uplod-files{
+  width:100%;
+  max-width:400px;
+  padding:15px;
+  margin:auto;
+}
+.img{
+  align:left;
+  width:100%;
+  margin:0;
+   
 }
