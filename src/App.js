@@ -13,9 +13,8 @@ function App() {
   const [title, updateTitle] = useState(null);
   const [errorMessage, updateErrorMessage] = useState(null);
   return (
-    <div >
+    <div>
       <Header />
-      <div className="container">
       <Router>
         <Switch>
           <Route path="/" exact={true}>
@@ -36,12 +35,13 @@ function App() {
           <PrivateRoute path="/home">
             <Home />
           </PrivateRoute>
-          </Switch>
-         
-        <AlertComponent errorMessage={errorMessage} hideError={updateErrorMessage}/>
-       </Router>
-      </div>
-      
+        </Switch>
+
+        <AlertComponent
+          errorMessage={errorMessage}
+          hideError={updateErrorMessage}
+        />
+      </Router>
       <Footer />
     </div>
   );

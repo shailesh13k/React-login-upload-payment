@@ -12,7 +12,6 @@ function RegistrationForm(props) {
     password: "",
     confirmPassword: "",
     successMessage: null,
-    
   });
   const handleChange = (e) => {
     const { id, value } = e.target;
@@ -73,100 +72,130 @@ function RegistrationForm(props) {
     }
   };
   return (
-    <div className="form-registration">
-        <h1 style={{backgroundColor: "MediumSeaGreen"}}className="page-title">Register Form</h1>
-        <form>
-          <div className="mb-2">
-            <label htmlFor="exampleInputFirstname1" className="form-label">First Name</label>
-            <input  type="text"
-              className="form-control"
-              id="firstname"
-              placeholder="Enter firstname"
-              value={state.firstname}
-              onChange={handleChange}
-            />
-          </div>
-          <div className="mb-3">
-            <label htmlFor="exampleInputFirstname1"  className="form-label">Last Name</label>
-            <input
-              type="text"
-              className="form-control"
-              id="lastname"
-              placeholder="Enter lastname"
-              value={state.lastname}
-              onChange={handleChange}
-            />
-          </div>
-          
-          <div className="mb-3">
-            <label htmlFor="exampleInputFirstname1" className="form-label">Mobile</label>
-            <input
-              type="mobile"
-              className="form-control"
-              id="mobile"
-              placeholder="Enter mobile"
-              value={state.mobile}
-              onChange={handleChange}
-            />
-          </div>
-          <div className="mb-3">
-            <label htmlFor="exampleInputEmail1" className="form-label">Email Address</label>
-            <input
-              type="email"
-              className="form-control"
-              id="email"
-              aria-describedby="emailHelp"
-              placeholder="Enter email"
-              value={state.email}
-              onChange={handleChange}
-            />
-            <small id="emailHelp" className="form-text text-muted">
-              We'll never share your email with anyone else.
-            </small>
-          </div>
-          <div className="mb-3">
-            <label htmlFor="exampleInputPassword1" className="form-label">Password</label>
-            <input
-              type="password"
-              className="form-control"
-              id="password"
-              placeholder="Password"
-              value={state.password}
-              onChange={handleChange}
-            />
-          </div>
-          <div className="mb-3">
-            <label htmlFor="exampleInputPassword1" className="form-label">Confirm Password</label>
-            <input
-              type="password"
-              className="form-control"
-              id="confirmPassword"
-              placeholder="Confirm Password"
-              value={state.confirmPassword}
-              onChange={handleChange}
-            />
-          </div>
-          <button
-            type="submit"
-            className="btn btn-primary"
-            onClick={handleSubmitClick}
-          >
-            Register
-          </button>
-        </form>
-           <div className="alert alert-success mt-2" 
-		     	style={{display: state.successMessage ? 'block' : 'none' }} role="alert">
-          {state.successMessage}
-           </div>
-        
-        <div className="mt-2">
-          <span>Already have an account? </span>
-          <span className="loginText" onClick={() => redirectToLogin()}>
-            Login here
-          </span>
+    <main id="main">
+      <section id="breadcrumbs" className="breadcrumbs">
+        <div className="container">
+          <ol>
+            <li>
+              <a href="/">Home</a>
+            </li>
+            <li>Register</li>
+          </ol>
         </div>
-      </div>
-    
+      </section>
+      <section className="inner-page">
+        <div className="container">
+          <div className="form-login">
+            <h1 className="fw-light">Register Form</h1>
+            <div
+              className="alert alert-success mt-2"
+              style={{ display: state.successMessage ? "block" : "none" }}
+              role="alert"
+            >
+              {state.successMessage}
+            </div>
+            <form>
+              <div className="mb-2">
+                <label htmlFor="exampleInputFirstname1" className="form-label">
+                  First Name
+                </label>
+                <input
+                  type="text"
+                  className="form-control"
+                  id="firstname"
+                  placeholder="Enter firstname"
+                  value={state.firstname}
+                  onChange={handleChange}
+                />
+              </div>
+              <div className="mb-3">
+                <label htmlFor="exampleInputFirstname1" className="form-label">
+                  Last Name
+                </label>
+                <input
+                  type="text"
+                  className="form-control"
+                  id="lastname"
+                  placeholder="Enter lastname"
+                  value={state.lastname}
+                  onChange={handleChange}
+                />
+              </div>
+
+              <div className="mb-3">
+                <label htmlFor="exampleInputFirstname1" className="form-label">
+                  Mobile
+                </label>
+                <input
+                  type="mobile"
+                  className="form-control"
+                  id="mobile"
+                  placeholder="Enter mobile"
+                  value={state.mobile}
+                  onChange={handleChange}
+                />
+              </div>
+              <div className="mb-3">
+                <label htmlFor="exampleInputEmail1" className="form-label">
+                  Email Address
+                </label>
+                <input
+                  type="email"
+                  className="form-control"
+                  id="email"
+                  aria-describedby="emailHelp"
+                  placeholder="Enter email"
+                  value={state.email}
+                  onChange={handleChange}
+                />
+                <small id="emailHelp" className="form-text text-muted">
+                  We'll never share your email with anyone else.
+                </small>
+              </div>
+              <div className="mb-3">
+                <label htmlFor="exampleInputPassword1" className="form-label">
+                  Password
+                </label>
+                <input
+                  type="password"
+                  className="form-control"
+                  id="password"
+                  placeholder="Password"
+                  value={state.password}
+                  onChange={handleChange}
+                />
+              </div>
+              <div className="mb-3">
+                <label htmlFor="exampleInputPassword1" className="form-label">
+                  Confirm Password
+                </label>
+                <input
+                  type="password"
+                  className="form-control"
+                  id="confirmPassword"
+                  placeholder="Confirm Password"
+                  value={state.confirmPassword}
+                  onChange={handleChange}
+                />
+              </div>
+              <button
+                type="submit"
+                className="btn btn-primary"
+                onClick={handleSubmitClick}
+              >
+                Register
+              </button>
+            </form>
+            <div className="mt-2">
+              <span>Already have an account? </span>
+              <span className="loginText" onClick={() => redirectToLogin()}>
+                Login here
+              </span>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
   );
 }
 

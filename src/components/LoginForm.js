@@ -28,7 +28,7 @@ function LoginForm(props) {
       .post(API_BASE_URL + "/api/auth/signin", payload)
       .then(function (response) {
         if (response.status === 200) {
-                    setState((prevState) => ({
+          setState((prevState) => ({
             ...prevState,
             successMessage: "Login successful. Redirecting to home page..",
           }));
@@ -54,61 +54,78 @@ function LoginForm(props) {
     props.updateTitle("Register");
   };
   return (
-    
-      <div className="form-login">
-      <h1 style={{backgroundColor: "MediumSeaGreen"}}className="fw-light">Login Form</h1>
-        <form>
-          <div className="mb-3">
-            <label htmlFor="exampleInputEmail1" className="form-label">Email address</label>
-            <input
-              type="email"
-              className="form-control"
-              id="email"
-              aria-describedby="emailHelp"
-              placeholder="Enter email"
-              value={state.email}
-              onChange={handleChange}
-            />
-            <small id="emailHelp" className="form-text text-muted">
-              We'll never share your email with anyone else.
-            </small>
-          </div>
-          <div className="mb-3">
-            <label htmlFor="exampleInputPassword1" className="form-label">Password</label>
-            <input
-              type="password"
-              className="form-control"
-              id="password"
-              placeholder="Password"
-              value={state.password}
-              onChange={handleChange}
-            />
-          </div>
-          <div className="form-check"></div>
-          <button
-            type="submit"
-            className="btn btn-primary"
-            onClick={handleSubmitClick}
-          >
-          Submit
-          </button>
-        </form>
-        <div
-          className="alert alert-success mt-2"
-          style={{ display: state.successMessage ? "block" : "none" }}
-          role="alert"
-        >
-          {state.successMessage}
+    <main id="main">
+      <section id="breadcrumbs" className="breadcrumbs">
+        <div className="container">
+          <ol>
+            <li>
+              <a href="/">Home</a>
+            </li>
+            <li>Login</li>
+          </ol>
         </div>
-        <div className="registerMessage">
-          <span>Dont have an account? </span>
-          <span className="loginText" onClick={() => redirectToRegister()}>
-            Register
-          </span>
+      </section>
+      <section className="inner-page">
+        <div className="container">
+          <div className="form-login">
+            <h1 className="fw-light">Login Form</h1>
+            <form>
+              <div className="mb-3">
+                <label htmlFor="exampleInputEmail1" className="form-label">
+                  Email address
+                </label>
+                <input
+                  type="email"
+                  className="form-control"
+                  id="email"
+                  aria-describedby="emailHelp"
+                  placeholder="Enter email"
+                  value={state.email}
+                  onChange={handleChange}
+                />
+                <small id="emailHelp" className="form-text text-muted">
+                  We'll never share your email with anyone else.
+                </small>
+              </div>
+              <div className="mb-3">
+                <label htmlFor="exampleInputPassword1" className="form-label">
+                  Password
+                </label>
+                <input
+                  type="password"
+                  className="form-control"
+                  id="password"
+                  placeholder="Password"
+                  value={state.password}
+                  onChange={handleChange}
+                />
+              </div>
+              <div className="form-check"></div>
+              <button
+                type="submit"
+                className="btn btn-primary"
+                onClick={handleSubmitClick}
+              >
+                Submit
+              </button>
+            </form>
+            <div
+              className="alert alert-success mt-2"
+              style={{ display: state.successMessage ? "block" : "none" }}
+              role="alert"
+            >
+              {state.successMessage}
+            </div>
+            <div className="registerMessage">
+              <span>Dont have an account? </span>
+              <span className="loginText" onClick={() => redirectToRegister()}>
+                Register
+              </span>
+            </div>
+          </div>
         </div>
-        <br/><br/><br/><br/><br/>
-      </div>
-    
+      </section>
+    </main>
   );
 }
 

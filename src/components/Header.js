@@ -1,43 +1,45 @@
 import React from "react";
 function Header() {
   return (
-    <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
-      <div className="container-fluid">
-        <a className="navbar-brand" href="/">
-          <h3>Uway Booking System</h3>
-        </a>
-        <button
-          className="navbar-toggler"
-          type="button"
-          data-bs-toggle="collapse"
-          data-bs-target="#navbarSupportedContent"
-          aria-controls="navbarSupportedContent"
-          aria-expanded="false"
-          aria-label="Toggle navigation"
-        >
-          <span className="navbar-toggler-icon"></span>
-        </button>
-        <div className="collapse navbar-collapse" id="navbarSupportedContent">
-          <ul className="navbar-nav me-auto mb-2 mb-lg-0">
-            <li className="nav-item">
-              <a className="nav-link" href="/">
-                Home
-              </a>
+    <header id="header" className="fixed-top header-inner-pages">
+      <div className="container d-flex align-items-center">
+        <h1 className="logo me-auto">
+          <a href="/">Uway Booking System</a>
+        </h1>
+        {/* Uncomment below if you prefer to use an image logo */}
+        {/* <a href="index.html" class="logo me-auto"><img src="assets/img/logo.png" alt="" class="img-fluid"></a>*/}
+        <nav className="nav-menu d-none d-lg-block">
+          <ul>
+            <li>
+              <a href="/">Home</a>
             </li>
-            <li className="nav-item">
-              <a className="nav-link" href="/login">
-                Login
-              </a>
+            <li>
+              <a href="#about">About</a>
             </li>
-            <li className="nav-item">
-              <a className="nav-link" href="/register">
-                Register
-              </a>
+            <li>
+              <a href="#services">Services</a>
+            </li>
+            <li>
+              <a href="#team">Team</a>
+            </li>
+
+            <li>
+              <a href="#contact">Contact</a>
+            </li>
+            <li>
+              <a href="/login">Login</a>
+            </li>
+            <li>
+              <a href="/register">Register</a>
             </li>
           </ul>
-        </div>
+        </nav>
+        {/* .nav-menu */}
+        <a href="#about" className="get-started-btn scrollto">
+          Get Started
+        </a>
       </div>
-    </nav>
+    </header>
   );
 }
 export default Header;

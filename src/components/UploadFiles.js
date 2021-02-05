@@ -2,7 +2,6 @@ import React, { Component } from "react";
 import "../App.css";
 import UploadService from "./UploadService";
 
-
 export default class UploadFiles extends Component {
   constructor(props) {
     super(props);
@@ -102,8 +101,7 @@ export default class UploadFiles extends Component {
     const { selectedFiles, progressInfos, message, fileInfos } = this.state;
 
     return (
-      <div className="uplod-files" >
-      <h1 style={{backgroundColor: "MediumSeaGreen"}}className="fw-light">Upload Files</h1>
+      <div className="uplod-files">
         {progressInfos &&
           progressInfos.map((progressInfo, index) => (
             <div className="mb-3" key={index}>
